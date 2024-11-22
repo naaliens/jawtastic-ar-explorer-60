@@ -42,7 +42,7 @@ const Index = () => {
             className="rounded-full px-6 shadow-lg"
             onClick={() => setCurrentModel("nerve")}
           >
-            Nervio
+            Nervios
           </Button>
         </div>
         
@@ -58,7 +58,7 @@ const Index = () => {
                 src="https://sketchfab.com/models/d012ecee2fda4f4abcabb792e92aa9ed/embed?autospin=1&autostart=1&transparent=1"
               />
             ) : (
-              <div className="relative">
+              <>
                 <iframe 
                   title="Nerve Content"
                   className="w-full h-full"
@@ -67,15 +67,21 @@ const Index = () => {
                   allow="autoplay; fullscreen; xr-spatial-tracking"
                   src="https://sketchfab.com/models/6cbe72f8e0fe4e9a9321fc6f81b2e46d/embed?autospin=1&autostart=1&transparent=1"
                 />
-                <Button
-                  className="absolute bottom-4 right-4 rounded-full px-6 bg-black/80 hover:bg-black/90 text-white shadow-lg backdrop-blur-sm"
-                  onClick={handleVRClick}
-                >
-                  Visualizar en realidad virtual 👀
-                </Button>
-              </div>
+              </>
             )}
           </div>
+          {currentModel === "nerve" && (
+            <div className="mt-4 flex justify-end">
+              <Button
+                variant="outline"
+                size="sm"
+                className="text-xs"
+                onClick={handleVRClick}
+              >
+                Visualizar en realidad virtual 👀
+              </Button>
+            </div>
+          )}
         </Card>
       </div>
     </div>
