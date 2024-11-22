@@ -8,14 +8,20 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleARClick = () => {
-    toast({
-      title: "AR Mode",
-      description: "Opening AR viewer...",
-    });
-  };
-
-  const handleModelLoad = () => {
-    setIsLoading(false);
+    // Verificar si el dispositivo es iOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+    
+    if (isIOS) {
+      // URL del modelo en Sketchfab para AR
+      const arUrl = "https://sketchfab.com/models/55bda96b878a46978810361f2e1a72fa/ar";
+      window.location.href = arUrl;
+    } else {
+      toast({
+        title: "Dispositivo no compatible",
+        description: "La visualización en AR solo está disponible para dispositivos iOS.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
@@ -35,6 +41,13 @@ const Index = () => {
               allow="autoplay; fullscreen; xr-spatial-tracking"
               src="https://sketchfab.com/models/55bda96b878a46978810361f2e1a72fa/embed?autospin=1&autostart=1&transparent=1"
             />
+            
+            <Button
+              className="absolute bottom-4 right-4 bg-primary hover:bg-primary/90 text-white"
+              onClick={handleARClick}
+            >
+              Ver en AR 👀
+            </Button>
           </div>
           
           <div className="mt-6 space-y-4 text-gray-700">
