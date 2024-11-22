@@ -13,7 +13,7 @@ const Index = () => {
     
     if (isIOS) {
       // URL del modelo en Sketchfab para AR
-      const arUrl = "https://sketchfab.com/models/55bda96b878a46978810361f2e1a72fa/ar";
+      const arUrl = "https://sketchfab.com/models/d012ecee2fda4f4abcabb792e92aa9ed/ar";
       window.location.href = arUrl;
     } else {
       toast({
@@ -39,7 +39,7 @@ const Index = () => {
               frameBorder="0"
               allowFullScreen
               allow="autoplay; fullscreen; xr-spatial-tracking"
-              src="https://sketchfab.com/models/55bda96b878a46978810361f2e1a72fa/embed?autospin=1&autostart=1&transparent=1"
+              src="https://sketchfab.com/models/d012ecee2fda4f4abcabb792e92aa9ed/embed?autospin=1&autostart=1&transparent=1"
             />
             
             <Button
@@ -58,10 +58,6 @@ const Index = () => {
             </p>
           </div>
         </Card>
-
-        <footer className="text-center text-sm text-gray-500 mt-8">
-          Modelo 3D por <a href="https://sketchfab.com/Anatomical3DModels" target="_blank" rel="nofollow" className="text-blue-500 hover:underline">Gonzalo Matzner</a> en <a href="https://sketchfab.com" target="_blank" rel="nofollow" className="text-blue-500 hover:underline">Sketchfab</a>
-        </footer>
       </div>
     </div>
   );
