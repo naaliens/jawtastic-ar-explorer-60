@@ -14,6 +14,10 @@ const Index = () => {
     });
   };
 
+  const handleModelLoad = () => {
+    setIsLoading(false);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-4">
       <div className="max-w-4xl mx-auto space-y-6">
@@ -32,12 +36,12 @@ const Index = () => {
               shadow-intensity="1"
               auto-rotate
               camera-orbit="45deg 55deg 2.5m"
-              onLoad={() => setIsLoading(false)}
+              onLoad={handleModelLoad}
               className="w-full h-full"
             >
               {isLoading && (
                 <div className="absolute inset-0 flex items-center justify-center bg-white">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500" />
                 </div>
               )}
               
