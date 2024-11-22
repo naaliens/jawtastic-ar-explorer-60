@@ -28,7 +28,7 @@ const Index = () => {
         <Card className="p-4 md:p-6 shadow-lg">
           <div className="aspect-video w-full relative bg-white rounded-lg overflow-hidden">
             <model-viewer
-              src="https://sketchfab.com/models/55bda96b878a46978810361f2e1a72fa/embed"
+              src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Box/glTF/Box.gltf"
               ar
               ar-modes="webxr scene-viewer quick-look"
               camera-controls
