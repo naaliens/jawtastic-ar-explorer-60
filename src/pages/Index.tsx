@@ -27,32 +27,14 @@ const Index = () => {
         
         <Card className="p-4 md:p-6 shadow-lg">
           <div className="aspect-video w-full relative bg-white rounded-lg overflow-hidden">
-            <model-viewer
-              src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Box/glTF/Box.gltf"
-              ar
-              ar-modes="webxr scene-viewer quick-look"
-              camera-controls
-              poster="poster.webp"
-              shadow-intensity="1"
-              auto-rotate
-              camera-orbit="45deg 55deg 2.5m"
-              onLoad={handleModelLoad}
+            <iframe 
+              title="Mandible / Mandíbula"
               className="w-full h-full"
-            >
-              {isLoading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-white">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500" />
-                </div>
-              )}
-              
-              <Button
-                slot="ar-button"
-                className="absolute bottom-4 right-4 bg-blue-500 hover:bg-blue-600"
-                onClick={handleARClick}
-              >
-                Ver en AR 👀
-              </Button>
-            </model-viewer>
+              frameBorder="0"
+              allowFullScreen
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              src="https://sketchfab.com/models/55bda96b878a46978810361f2e1a72fa/embed?autospin=1&autostart=1&transparent=1"
+            />
           </div>
           
           <div className="mt-6 space-y-4 text-gray-700">
@@ -65,7 +47,7 @@ const Index = () => {
         </Card>
 
         <footer className="text-center text-sm text-gray-500 mt-8">
-          Modelo 3D por Gonzalo Matzner en Sketchfab
+          Modelo 3D por <a href="https://sketchfab.com/Anatomical3DModels" target="_blank" rel="nofollow" className="text-blue-500 hover:underline">Gonzalo Matzner</a> en <a href="https://sketchfab.com" target="_blank" rel="nofollow" className="text-blue-500 hover:underline">Sketchfab</a>
         </footer>
       </div>
     </div>
